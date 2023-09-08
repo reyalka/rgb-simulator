@@ -22,10 +22,7 @@ export function ColorSlider({ onChange, color, colorType }: Props) {
         onChange={onChange}
         style={{
           appearance: "none",
-          // TODO: コミット時に改行を修正(prettierのせい)
-          background: `linear-gradient(90deg,${toFunctionalRgba(
-            startColor
-          )},${toFunctionalRgba(endColor)})`,
+          background: `linear-gradient(90deg,${toFunctionalRgba(startColor)},${toFunctionalRgba(endColor)})`,
           marginBottom: "15px",
           height: "30px",
           width: "300px",
