@@ -6,9 +6,14 @@ import { copyToClipboard } from "utils/utility";
 export function ResultColorCode({ color }: { color: string }) {
   const [isCopyied, setIsCopied] = useState(false);
   function handleClick() {
-    copyToClipboard(color, () => {
-      setIsCopied(true);
-      setTimeout(() => setIsCopied(false), 1500);
+    copyToClipboard(color, {
+      onSucsess: () => {
+        setIsCopied(true);
+        setTimeout(() => setIsCopied(false), 1500);
+      },
+      onFailure: () => {
+        alert("コピーに失敗しました");
+      },
     });
   }
   return (
@@ -18,7 +23,7 @@ export function ResultColorCode({ color }: { color: string }) {
         justifyContent: "center",
         alignItems: "center",
         marginLeft: "0",
-        marginBottom: "10px"
+        marginBottom: "10px",
       }}
     >
       <p
@@ -40,7 +45,7 @@ export function ResultColorCode({ color }: { color: string }) {
           height: "70px",
           padding: "5px",
           border: `10px solid ${color}`,
-          borderLeft: "0"
+          borderLeft: "0",
         }}
       >
         {isCopyied ? <FaCheck size={30} /> : <FaCopy size={30} />}
