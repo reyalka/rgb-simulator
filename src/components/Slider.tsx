@@ -8,10 +8,13 @@ interface Props {
   colorType: ColorType;
 }
 export function ColorSlider({ onChange, color, colorType }: Props) {
+  // スライダーの背景のグラデーションに関して、
+  // redの場合##RRGGBBを#00GGBBと#ffGGBBをグラデーションとする
   const startColor = { ...color };
   const endColor = { ...color };
   startColor[colorType] = 0;
   endColor[colorType] = 255;
+  
   return (
     <>
       <input

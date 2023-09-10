@@ -5,8 +5,10 @@ import { copyToClipboard } from "utils/utility";
 
 export function ResultColorCode({ color }: { color: string }) {
   const [isCopyied, setIsCopied] = useState(false);
-  function handleClick() {
+
+  function handleCopyButtonClick() {
     copyToClipboard(color, {
+      // FaCheckに変更して、3秒後にFaCopyに戻す
       onSucsess: () => {
         setIsCopied(true);
         setTimeout(() => setIsCopied(false), 1500);
@@ -16,6 +18,7 @@ export function ResultColorCode({ color }: { color: string }) {
       },
     });
   }
+
   return (
     <div
       style={{
@@ -39,7 +42,7 @@ export function ResultColorCode({ color }: { color: string }) {
         {color}
       </p>
       <button
-        onClick={handleClick}
+        onClick={handleCopyButtonClick}
         style={{
           borderRadius: "0 10px 10px 0",
           height: "70px",
