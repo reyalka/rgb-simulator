@@ -19,7 +19,6 @@ interface Handler {
   onFailure?: (err: Error) => void;
 }
 export function copyToClipboard(text: string, handler: Handler = {}): void {
-  // TODO: コミット時に調整
   const {
     onSucsess = () => console.log("Copied!"),
     onFailure = (error) => console.error("Copy failed: ", error),
