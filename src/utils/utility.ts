@@ -2,7 +2,7 @@ import { RGBA } from "types/types";
 
 // RGBA型を"rgba(RR,GG,BB,AA)"に変換
 export function toFunctionalRgba(color: RGBA): string {
-  return `rgba(${color.red},${color.green},${color.blue},${color.alpha})`;
+  return `rgba(${color.red}, ${color.green}, ${color.blue}, ${color.alpha})`;
 }
 
 // RGBA型を"#RRGGBB"に変換（Aは使用しない）
