@@ -8,7 +8,7 @@ export function ResultColorCode({ color }: { color: string }) {
 
   function handleCopyButtonClick() {
     copyToClipboard(color, {
-      // FaCheckに変更して、3秒後にFaCopyに戻す
+      // FaCheckに変更して、1.5秒後にFaCopyに戻す
       onSucsess: () => {
         setIsCopied(true);
         setTimeout(() => setIsCopied(false), 1500);
